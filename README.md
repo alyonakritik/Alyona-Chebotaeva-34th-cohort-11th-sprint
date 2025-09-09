@@ -1,1 +1,21 @@
-# Alyona-Chebotaeva-34th-cohort-11th-sprint
+﻿# Автотест API сервиса заказов
+
+## Что проверяет тест
+1. Создание заказа (`POST /api/v1/orders`)
+2. Сохранение номера трека заказа
+3. Получение заказа по треку (`GET /api/v1/orders/track?t=<track>`)
+4. Проверка, что код ответа равен `200`
+
+Ошибки при запросах записываются в файл:
+/var/www/backend/logs/error.log
+
+## Структура проекта
+- `data.py` — тестовые данные  
+- `configuration.py` — базовый URL, заголовки, путь к логам  
+- `sender_stand_request.py` — функции для запросов (POST/GET, с логами)  
+- `test_order_api.py` — автотест создания и проверки заказа  
+- `.gitignore` — исключения для git  
+
+## Запуск теста
+```bash
+pytest test_order_api.py::test_create_and_get_order -s -v
