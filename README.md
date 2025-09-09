@@ -18,4 +18,6 @@
 
 ## Запуск теста
 ```bash
-pytest test_order_api.py::test_create_and_get_order -s -v
+pytest -s -v test_order_api.py::test_get_order_by_track_returns_200 # Трек номер заказа.
+pytest -s -v test_order_api.py::test_create_order_returns_201 # Заказ сделан.
+pytest -s -v test_order_api.py # Запустить все тесты.
